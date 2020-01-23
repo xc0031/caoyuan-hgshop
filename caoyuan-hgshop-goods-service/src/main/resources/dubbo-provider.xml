@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:dubbo="http://dubbo.apache.org/schema/dubbo"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans 
+	 http://www.springframework.org/schema/beans/spring-beans-4.3.xsd  
+	 http://dubbo.apache.org/schema/dubbo        
+	 http://dubbo.apache.org/schema/dubbo/dubbo.xsd">
+	<!-- 1.提供方应用信息，用于计算依赖关系,写入项目名字即可(也可以不是项目名字) -->
+	<dubbo:application name="dubbo-provider" />
+	<!-- 2.1注册中心 采用zookeeper,(如果注解中有直连,优先直连,然后再采用这个) -->
+	<!--<dubbo:registry address="zookeeper://localhost:2181" />-->
+	<!-- 2.2仅直连,速度快 -->
+	 <dubbo:registry address="N/A" />
+	<!-- 2.3使用multicast广播注册中心暴露服务地址 -->
+	<!-- <dubbo:registry address="multicast://224.5.6.7:1234" /> -->
+	<!-- 3.用dubbo协议在20880端口暴露服务 -->
+	<dubbo:protocol name="dubbo" port="20880" />
+	<!-- 4.1声明需要暴露的服务接口,通过扫描包的方法 -->
+	<dubbo:annotation package="com.caoyuan.hgshop.service.impl" />
+	<!-- 4.2声明接口,通过注册bean的方式 -->
+	<!-- <dubbo:service interface="com.bawei.dubbo.service.UserService" ref="userService" /> -->
+	<!-- 和本地bean一样实现服务 -->
+	<!-- <bean id="userService" class="com.bawei.dubbo.service.impl.UserServiceImpl" /> -->
+	<!-- 5.元数据信息,可以不配置 -->
+	<!--<dubbo:metadata-report address="zookeeper://localhost:2181" />-->
+</beans>
