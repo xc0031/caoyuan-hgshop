@@ -15,7 +15,8 @@ import java.util.List;
 @Controller
 public class SpecController {
 
-	@Reference(url="dubbo://localhost:20880",timeout=5000)
+	//@Reference(url="dubbo://localhost:20880",timeout=5000)
+	@Reference
 	private SpecService specService;
 	
 	@RequestMapping("/specList")

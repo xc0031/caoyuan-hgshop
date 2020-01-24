@@ -15,7 +15,8 @@ import java.util.List;
 @Controller
 public class BrandController {
 
-	@Reference(url="dubbo://localhost:20880",timeout=5000)
+	//@Reference(url="dubbo://localhost:20880",timeout=5000)
+	@Reference
 	private BrandService brandService;
 	
 	@RequestMapping("/brandList")

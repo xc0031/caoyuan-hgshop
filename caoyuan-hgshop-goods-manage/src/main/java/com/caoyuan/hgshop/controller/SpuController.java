@@ -22,7 +22,8 @@ import java.util.List;
 @Controller
 public class SpuController {
 
-	@Reference(url="dubbo://localhost:20880",timeout=5000)
+	//@Reference(url="dubbo://localhost:20880",timeout=5000)
+	@Reference
 	private SpuService spuService;
 	
 	@RequestMapping("/showCategoryTree")
@@ -57,7 +58,7 @@ public class SpuController {
 			String date = new SimpleDateFormat("yyyyMMdd").format(new Date());
 			fileName = date + "/" + fileName;
 			//File destFile = new File("G://pic"+File.separator+date, fileName);
-			File destFile = new File("G://pic", fileName);
+			File destFile = new File("D:/idea_workspace/pic/", fileName);
 			
 			if (!destFile.getParentFile().exists()) {
 				destFile.getParentFile().mkdirs();
@@ -70,7 +71,7 @@ public class SpuController {
 //				new File("G://pic/" + spu.getSmallPic()).delete();
 				//jetty:run 报错!
 				//tomcat7:run 报错! 本地仓库的jar包替换一下
-				FileUtils.forceDelete(new File("G://pic/" + spu.getSmallPic()));
+				FileUtils.forceDelete(new File("D:/idea_workspace/pic/" + spu.getSmallPic()));
 			}
 			//1.4.给spu的smallPic属性赋值
 			spu.setSmallPic(fileName);

@@ -39,7 +39,7 @@
 	</bean>
 	<!-- 应用程序名称 -->
 	<dubbo:application name="dubbo-consumer" />
-	<!--<dubbo:registry address="zookeeper://localhost:2181"/>-->
+	<dubbo:registry address="zookeeper://192.168.174.128:2181"/>
 	<dubbo:annotation package="com.caoyuan.hgshop.controller" />
 	<!-- <dubbo:reference interface="com.caoyuan.hgshop.service.UserService" id="userService" url="dubbo://localhost:20880"/>	 -->
 	

@@ -20,8 +20,9 @@ import java.util.UUID;
 
 @Controller
 public class SkuController {
-	
-	@Reference(url="dubbo://localhost:20880",timeout=5000)
+
+	//@Reference(url="dubbo://localhost:20880",timeout=5000)
+	@Reference
 	private SkuService skuService;
 	
 	@RequestMapping("/skuList")
@@ -38,7 +39,7 @@ public class SkuController {
 		String originalFilename = file.getOriginalFilename();
 		if (StringUtils.isNotBlank(originalFilename)) {
 			String fileName = UUID.randomUUID() + "_" + originalFilename;
-			File destFile = new File("G://pic/", fileName);
+			File destFile = new File("D:/idea_workspace/pic", fileName);
 			if (!destFile.getParentFile().exists()) {
 				destFile.getParentFile().mkdirs();
 			}
@@ -46,7 +47,7 @@ public class SkuController {
 			
 			String oldPath = sku.getImage();
 			if (StringUtils.isNotBlank(oldPath)) {
-				FileUtils.forceDelete(new File("G://pic/" + oldPath));
+				FileUtils.forceDelete(new File("D:/idea_workspace/pic/" + oldPath));
 			}
 			sku.setImage(fileName);
 		}

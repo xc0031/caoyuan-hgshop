@@ -64,5 +64,7 @@
 	<!-- 导入dubbo -->
 	<import resource="dubbo-provider.xml" />
 	<!--导入kafka和redis-->
-	<import resource="spring-*.xml" />
+	<import resource="spring-redis.xml" />
+	<import resource="spring-kafka-producer.xml" />
+	<import resource="spring-kafka-consumer.xml" />
 </beans>

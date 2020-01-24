@@ -197,14 +197,14 @@
                         <!-- 访问路径 -->
                         <host>localhost</host>
                     </httpConnector>
-                    <contextHandlers>
-                        <jettyWebAppContext>
-                            <!-- 虚拟路径 -->
-                            <contextPath>/pic/</contextPath>
-                            <!-- 物理路径 -->
-                            <resourceBase>/resources/pic/</resourceBase>
-                        </jettyWebAppContext>
-                    </contextHandlers>
+                    <!--<contextHandlers>-->
+                        <!--<jettyWebAppContext>-->
+                            <!--&lt;!&ndash; 虚拟路径 &ndash;&gt;-->
+                            <!--<contextPath>/pic/</contextPath>-->
+                            <!--&lt;!&ndash; 物理路径 &ndash;&gt;-->
+                            <!--<resourceBase>/resources/pic/</resourceBase>-->
+                        <!--</jettyWebAppContext>-->
+                    <!--</contextHandlers>-->
                     <reload>automatic</reload>
                     <scanIntervalSeconds>1</scanIntervalSeconds>
                 </configuration>

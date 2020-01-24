@@ -21,7 +21,8 @@ import java.util.Map;
 @Controller
 public class CategoryController {
 
-	@Reference(url="dubbo://localhost:20880",timeout=5000)
+	//@Reference(url="dubbo://localhost:20880",timeout=5000)
+	@Reference
 	private CategoryService categoryService;
 	
 	/**
