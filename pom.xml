@@ -40,7 +40,7 @@
         <!-- 分页助手 -->
         <pagehelper-version>5.1.2</pagehelper-version>
         <!-- dubbo -->
-        <dubbo.version>2.7.3</dubbo.version>
+        <dubbo.version>2.7.15</dubbo.version>
     </properties>
     <!-- jar依赖 -->
     <dependencyManagement>
